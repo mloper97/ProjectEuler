@@ -151,7 +151,7 @@ function Euler4()
     return result;
 }
 /*
-tests string to see if it's a palindrome
+Tests string to see if it's a palindrome. Used in Problem 4.
 */
 function IsPalindrome(n)
 {
@@ -180,4 +180,45 @@ function Euler5()
         result = result * powers[i];
     }
     return result;
+}
+/*
+The sum of the squares of the first ten natural numbers is,
+1^2+2^2+...+10^2=385
+
+The square of the sum of the first ten natural numbers is,
+(1+2+...+10)2=55^2=3025
+
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025−385=2640.
+
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+*/
+function Euler6()
+{
+    //The sum of the first 100 natural numbers is 5050^2, because the sum of the first N natural numbers is N*(N+1)/2
+    let squareOfSum = 5050 * 5050;
+    /*
+    * The sum of the squares is a little more complicated.
+    * It's likely going to be a cubic equation since the sum of N is quadratic
+    * To derive a cubic from four points (the first four points, (1, 1), (2, 5), (3, 14), and (4,30)) you can use Lagrange interpolation.
+    * The algebra eventually comes out to (2n^3+3n^2+n)/6
+    * And it works:
+    * (2+3+1)/6 = 6/6 = 1
+    * (2*8+3*4+2)/6 = (16+12+2)/6 = 30/6 = 5
+    * (2*27+3*9+3)/6 = (54+27+3)/6 = 84/6 = 14
+    * (2*64+3*16+4)/6 = (128+48+4)/6 = 180/6 = 30
+    * (2*125+3*25+5)/6 = 330/6 = 55 = 30 + 5*5
+    * So anyway, all that is explanation for:
+    */
+   let sumOfSquare = (2*1000000 + 3*10000 + 100)/6;
+   return squareOfSum - sumOfSquare; 
+}
+/*
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+What is the 10 001st prime number?
+*/
+function Euler7()
+{
+    let primes = PrimesUpTo(150000);
+    return primes[10000];
 }
