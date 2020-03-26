@@ -4,4 +4,4 @@ To quote the Project Euler site at https://projecteuler.net/, "Project Euler is 
 
 This repository contains my solutions, as they're completed, to the first 100 Project Euler problems, those which the creators of Project Euler allow solutions to be shared online.
 
-So far, since I began this project on March 25, 2020, I have completed 7 problems.
+So far, since I began this project on March 25, 2020, I have completed 8 problems.
