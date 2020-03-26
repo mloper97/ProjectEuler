@@ -268,3 +268,43 @@ function Euler8()
     }
     return max;
 }
+
+/*
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+a^2 + b^2 = c^2
+
+For example, 32 + 42 = 9 + 16 = 25 = 52.
+
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+*/
+function Euler9()
+{
+    //you can generate Pythagorean triples/triplets with the following set of equations, for positive integers m > n:
+    // a = m^2 - n^2
+    // b = 2mn
+    // c = m^2 + n^2
+    // thus
+    // m^2 - n^2 + 2mn + m^2 + n^2 = 1000
+    // 2m^2 + 2mn = 1000
+    // m^2 + mn = 500
+    // m(m+n) = 500
+    // so m^2 < 500
+    // that gives us m <= 22
+    // thinking about it 20(20+n) = 500 -> 400+20n = 500 -> 20n = 100 -> n = 5
+    // so a = 400 - 25 = 375
+    // b = 2*20*5 = 200
+    // c = 400 + 25 = 425
+    // 425 + 375 + 200 = 1000
+    return 375*200*425;
+}
+/*
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+*/
+function Euler10()
+{
+    let primes = PrimesUpTo(2000000);
+    return primes.reduce(function(a, b){ return a + b;}, 0);
+}
